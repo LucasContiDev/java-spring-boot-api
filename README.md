@@ -10,9 +10,13 @@ To set-up this project just follow above steps:
   
   OR
   
-  1 - git clone this project to any desired folder.
-  2 - inside the project folder, run the following command in the terminal: mvn clean spring-boot:run
-  4 - Do Not close the terminal from the step 2.
-  5 - the rest api will be available under the address: localhost:8080
+  1 - git clone this project to any desired folder;
+  2 - inside the project folder, run the following command in the terminal: mvn clean spring-boot:run;
+  4 - Do Not close the terminal from the step 2;
+  5 - the rest api will be available under the address: localhost:8080;
+  
+  OR
+  
+  1 - simply execute the .jar file in /target folder (not the "original" one);
   
   Any questions, mail me at: conty.lucas@gmail.com
