@@ -14,11 +14,7 @@ To set-up this project just follow above steps:
   2 - inside the project folder, run the following command in the terminal: mvn clean spring-boot:run;
   4 - Do Not close the terminal from the step 2;
   5 - the rest api will be available under the address: localhost:8080;
-  
-  OR
-  
-  1 - simply execute the .jar file in /target folder (not the "original" one);
-  
+
   And, for testing, the requests can be done by:
   
   POST
