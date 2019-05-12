@@ -3,54 +3,128 @@ package com.lucas.kairos.application.models;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
+/**
+ * Model class for UserContacts
+ */
 public class UserContacts {
-      @Id
-      public ObjectId _id;
+    @Id
+    private ObjectId _id;
 
-      public String contact;
-      public String type;
-      public Users user;
+    private String contact;
+    private String type;
+    private String contactName;
+    private Users user;
 
-      // Constructors
-      public UserContacts() {}
+    /**
+     * Constructor method of UserContacts class
+     */
+    public UserContacts() {
+    }
 
-      public UserContacts(ObjectId pId, String pContact, String pType, Users pUser) {
+    /**
+     * Constructor method of UserContacts class
+     * 
+     * @param pId          the ID of an UserContacts object
+     * @param pContact     the contact information of an UserContacts object
+     * @param pType        the type of the contact of an UserContacts object
+     * @param pUser        the User object of an UserContacts object
+     * @param pContactName the contact name of an UserContacts object
+     */
+    public UserContacts(ObjectId pId, String pContact, String pType, Users pUser, String pContactName) {
         this._id = pId;
+        this.setContactName(pContactName);
         this.contact = pContact;
         this.type = pType;
         this.user = pUser;
-      }
+    }
 
-      // ObjectId needs to be converted to string
-      public String get_id() { 
-          return _id.toHexString();
-      }
+    /**
+     * Retrieve the _id of an UserContact converted to String
+     * 
+     * @return _id
+     */
+    public String get_id() {
+        return _id.toHexString();
+    }
 
-      public void set_id(ObjectId pId) {
-          this._id = pId;
-      }
+    /**
+     * Insert the _id of an UserContact
+     * 
+     * @param pId
+     */
+    public void set_id(ObjectId pId) {
+        this._id = pId;
+    }
 
-      public String getContact() {
-          return contact;
-      }
+    /**
+     * Retrieve the contact information of an UserContact
+     * 
+     * @return contact
+     */
+    public String getContact() {
+        return contact;
+    }
 
-      public void setContact(String pContact) {
-          this.contact = pContact;
-      }
+    /**
+     * Insert the contact information of an UserContact
+     * 
+     * @param pContact
+     */
+    public void setContact(String pContact) {
+        this.contact = pContact;
+    }
 
-      public String getType() {
-          return type;
-      }
+    /**
+     * Retrieve the type of the contact of an UserContact
+     * 
+     * @param type
+     */
+    public String getType() {
+        return type;
+    }
 
-      public void setType(String pType) {
-          this.type = pType;
-      }
+    /**
+     * Insert the type of the contact of an UserContact
+     * 
+     * @param pType
+     */
+    public void setType(String pType) {
+        this.type = pType;
+    }
 
-      public Users getUser() {
-          return user;
-      }
-      
-      public void setUser(Users pUsers) {
-          this.user = pUsers;
-      }
+    /**
+     * Retrieve the contact name of an UserContact
+     * 
+     * @param contactName
+     */
+    public String getContactName() {
+        return contactName;
+    }
+
+    /**
+     * Insert the contact name of an UserContact
+     * 
+     * @param pContactName
+     */
+    public void setContactName(String pContactName) {
+        this.contactName = pContactName;
+    }
+
+    /**
+     * Retrieve the User object of an UserContact
+     * 
+     * @param user
+     */
+    public Users getUser() {
+        return user;
+    }
+
+    /**
+     * Insert the User object of an UserContact
+     * 
+     * @param pUsers
+     */
+    public void setUser(Users pUsers) {
+        this.user = pUsers;
+    }
 }

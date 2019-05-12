@@ -18,7 +18,7 @@ import com.lucas.kairos.application.repositories.UsersRepository;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/v1/users")
 public final class UsersController {
 
     @Autowired
@@ -34,8 +34,8 @@ public final class UsersController {
         return repository.findBy_id(pId);
     }
 
-    @RequestMapping(value = "{name}", method = RequestMethod.GET)
-    public Users getUsersByName(@RequestParam(value="name") String pName) {
+    @RequestMapping(value = "/name", method = RequestMethod.GET)
+    public List<Users> getUsersByName(@RequestParam(value="name") String pName) {
         return repository.findByName(pName);
     }
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lucas.kairos.application.models.UserContacts;
@@ -17,7 +18,7 @@ import com.lucas.kairos.application.repositories.UserContactsRepository;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/userContacts")
+@RequestMapping("/api/v1/userContacts")
 public final class UserContactsController {
 
     @Autowired
@@ -33,9 +34,14 @@ public final class UserContactsController {
         return repository.findBy_id(pId);
     }
 
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public UserContacts getUsersContactsByUserName(@PathVariable("user.name") String pName) {
+    @RequestMapping(value = "/username", method = RequestMethod.GET)
+    public List<UserContacts> getUserContactsByUserName(@RequestParam(value="name") String pName) {
         return repository.findByUserName(pName);
+    }
+    
+    @RequestMapping(value = "/contactname", method = RequestMethod.GET)
+    public List<UserContacts> getUserContactsByContactName(@RequestParam(value="name") String pName) {
+        return repository.findByContactName(pName);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
