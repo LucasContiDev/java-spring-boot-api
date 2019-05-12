@@ -12,7 +12,8 @@
 	<artifactId>application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>application</name>
-	<description>Demo project for Spring Boot</description>
+	<description>A simple Spring Boot Rest API with MongoDB</description>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
